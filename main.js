@@ -1,11 +1,11 @@
 /*
 感謝您觀看這份程式碼
-作品名稱: N/A
+作品名稱: 烏龜烏龜翹
 作者: 陳光穎 Bruce Chen
 聯絡方式
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
-最後修改日期: 2018/2/13
+最後修改日期: N/A
 版本: N/A
 發表於: https://brucechen034020.github.io/
 程式碼尺度
@@ -246,11 +246,11 @@ function sendOnline(){ // send a message to show you are online to the server
 function Reset(){
     /* Send reset to server */
     var now = new Date();
-    var des = new Date(now.getTime() + 7000);
+    var des = new Date(now.getTime() + 14000);
     var ref = database.ref('reset/0');
     var data = {time: des.toString(),
               sender: localStorage.getItem('name')};
-    ref.set(data);
+    setTimeout(function(){ref.set(data);}, 7000);
 
     involved = false;
 
