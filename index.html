@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<!--
+感謝您觀看這份程式碼
+作品名稱: N/A
+作者: 陳光穎 Bruce Chen
+聯絡方式
+  Facebook連結: https://www.facebook.com/bruce.chen.372
+  LINE ID: brucechen0
+最後修改日期: N/A
+版本: N/A
+發表於: https://brucechen034020.github.io/
+程式碼尺度
+  N/A
+智慧財產權:
+    本作品作者與使用者約定如下:
+      1. 您（使用者）可以複製、發行、展覽、表演、放映、廣播或通過資訊網路傳播本作品；不需標示作者姓名。
+      2. 您可以自由複製、散布、展示及演出本作品。
+      3. 您可以自由以任何形式改變、轉變或更改本作品。
+      4. 您得為教育、娛樂、學術、公益、報導、評論目的而使用本作品，不限所利用之質量及其在整個著作所占之比例。
+作者註解:
+  1. 如本網頁有 bug 請用 Facebook(Messenger) 通知 Bruce Chen，謝謝。
+  2. 如有任何建議，請用 Facebook(Messenger) 通知 Bruce Chen，謝謝。
+  -->
+  <head>
+    <meta charset="utf-8" />
+    <title> 烏龜烏龜翹，鍵盤鍵盤按 </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.9/addons/p5.sound.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="events.js"></script>
+    <script src="keycode.js"></script>
+    <!--<style> body {padding: 0; margin: 0;} </style>-->
+  </head>
+  <body>
+    <label> Your name: </label>
+    <input id="textBox5" />
+    <button id='button2'> Set </button>
+    <p></p>
+    <label id='scoreL' style="font-size:24px"> Your score: 76 points </label>
+    <p style="font-size:20px"> Leaderboard </p>
+    <ul style="font-size:20px" id='leaderboard'></ul>
+    <p id='onlineCount'> 3 people online </p>
+
+      <ol id='onlineList'> </ol>
+
+    <p id='result'> Result: </p>
+
+      <ol id='resultList'> </ol>
+
+    <button id="button1"> 報名下一場 </button>
+    <p id='p1'> 莊家會在剩餘3秒時抽，所以請勿太晚加入以免損失機會。 </p>
+    <label id="label1"> 3 </label>
+    <p></p>
+    <label id="label2"> 您按了 Enter </label>
+  </body>
+</html>
