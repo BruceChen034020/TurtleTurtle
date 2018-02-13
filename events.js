@@ -1,5 +1,5 @@
 /* Events
-版本: 1.0.0.5
+版本: 1.0.0.7
 */
 
 /* Click Events */
@@ -83,6 +83,7 @@ function errData3(err){ // value (void)
 
 function gotData4(data){ // value reset (void)
   var dt = data.val();
+  leaderboardData = dt;
   var listings = selectAll('.Leaderboard');
   for(var i=0; i<listings.length; i++){
     listings[i].remove();

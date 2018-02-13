@@ -6,7 +6,7 @@
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
 最後修改日期: 2018/2/13
-版本: 1.0.0.6
+版本: 1.0.0.7
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -197,12 +197,12 @@ function countOnline(){
 }
 
 function chooseBanker(){
-  console.log('chooseBanker');
+
   var now = new Date();
   var min = now.getTime() * 2;
   var minHolder;
   var keys = Object.keys(lastBankerData);
-  console.log('205');
+
   for(var i=0; i<keys.length; i++){
     var k = keys[i];
 
@@ -211,19 +211,18 @@ function chooseBanker(){
     var t = new Date(lastBankerData[k].lastBankerTime);
 
     if(onlineList.includes(n)){
-      console.log(n);
-      console.log(t.getTime(), min);
+
       if(t.getTime() < min){
-        console.log(n, t);
+
         min =  t.getTime();
         minHolder = n;
-        console.log('minHolder: ' + minHolder);
+
       }
     }
   }
 
   banker = minHolder;
-console.log(banker);
+
   if(banker == localStorage.getItem('name')){
     isBanker = true;
   }else{
@@ -352,6 +351,8 @@ function Reset1(){
     bankerChosen = false;
 
     /* Update leaderboard */
+    console.log(score);
+    console.log(leaderboardData['3rdScore']);
     if(score > leaderboardData['1stScore']){
       leaderboardData['3rdName'] = leaderboardData['2ndName'];
       leaderboardData['3rdScore'] = leaderboardData['2ndScore'];
@@ -359,15 +360,22 @@ function Reset1(){
       leaderboardData['2ndScore'] = leaderboardData['1stScore'];
       leaderboardData['1stName'] = localStorage.getItem('name');
       leaderboardData['1stScore'] = score;
+      var ref4 = database.ref('leaderboard');
+      ref4.set(leaderboardData);
     }else if(score > leaderboardData['2ndScore']){
       leaderboardData['3rdName'] = leaderboardData['2ndName'];
       leaderboardData['3rdScore'] = leaderboardData['2ndScore'];
       leaderboardData['2ndName'] = localStorage.getItem('name');
       leaderboardData['2ndScore'] = score;
+      var ref4 = database.ref('leaderboard');
+      ref4.set(leaderboardData);
     }else if(score > leaderboardData['3rdScore']){
       leaderboardData['3rdName'] = localStorage.getItem('name');
       leaderboardData['3rdScore'] = score;
+      var ref4 = database.ref('leaderboard');
+      ref4.set(leaderboardData);
     }
+
 
     var d = destination.getTime();
     destination.setTime(d + 18000)
