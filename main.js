@@ -6,7 +6,7 @@
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
 最後修改日期: 2018/2/13
-版本: 1.0.0.5
+版本: 1.0.0.6
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -370,5 +370,5 @@ function Reset1(){
     }
 
     var d = destination.getTime();
-    destination.setTime(d + 14000)
+    destination.setTime(d + 18000)
 }
