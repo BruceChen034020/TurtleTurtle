@@ -6,7 +6,7 @@
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
 最後修改日期: 2018/2/13
-版本: 1.0.0.3
+版本: 1.0.0.5
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -145,7 +145,7 @@ function draw(){
   }else{
     label1.innerHTML = '';
   }
-  if(destination.getTime() - 3000 < now.getTime() && !bankerChosen){
+  if(destination.getTime() - 7000 < now.getTime() && !bankerChosen){
     countOnline();
     chooseBanker();
   }
@@ -255,7 +255,7 @@ function sendOnline(){ // send a message to show you are online to the server
 function Reset2(){
     /* Send reset to server */
     var now = new Date();
-    var des = new Date(now.getTime() + 7000);
+    var des = new Date(now.getTime() + 11000);
     var ref = database.ref('reset/0');
     var data = {time: des.toString(),
               sender: localStorage.getItem('name')};
@@ -338,7 +338,7 @@ function Reset1(){
     }
 
     button1.style.display="block";
-    document.getElementById('p1').innerHTML = document.getElementById('p1').value = '莊家會在剩餘3秒時抽，所以請勿太晚加入以免損失機會。';
+    document.getElementById('p1').innerHTML = document.getElementById('p1').value = '莊家會在剩餘7秒時抽，所以請勿太晚加入以免損失機會。';
     label2.innerHTML = '';
     isSent = false;
 
