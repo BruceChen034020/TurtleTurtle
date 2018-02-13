@@ -6,7 +6,7 @@
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
 最後修改日期: 2018/2/13
-版本: 1.0.0.7
+版本: 1.0.0.8
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -197,7 +197,7 @@ function countOnline(){
 }
 
 function chooseBanker(){
-
+console.log(onlineList);
   var now = new Date();
   var min = now.getTime() * 2;
   var minHolder;
@@ -247,7 +247,7 @@ function sendOnline(){ // send a message to show you are online to the server
     name: localStorage.getItem('name'),
     time: d.toString()
   }
-  console.log(data);
+
   ref.set(data);
 }
 
@@ -351,20 +351,23 @@ function Reset1(){
     bankerChosen = false;
 
     /* Update leaderboard */
-    console.log(score);
-    console.log(leaderboardData['3rdScore']);
+
     if(score > leaderboardData['1stScore']){
-      leaderboardData['3rdName'] = leaderboardData['2ndName'];
-      leaderboardData['3rdScore'] = leaderboardData['2ndScore'];
-      leaderboardData['2ndName'] = leaderboardData['1stName'];
-      leaderboardData['2ndScore'] = leaderboardData['1stScore'];
+      if(leaderboardData['1stName']!=localStorage.getItem('name')){
+        leaderboardData['3rdName'] = leaderboardData['2ndName'];
+        leaderboardData['3rdScore'] = leaderboardData['2ndScore'];
+        leaderboardData['2ndName'] = leaderboardData['1stName'];
+        leaderboardData['2ndScore'] = leaderboardData['1stScore'];
+      }
       leaderboardData['1stName'] = localStorage.getItem('name');
       leaderboardData['1stScore'] = score;
       var ref4 = database.ref('leaderboard');
       ref4.set(leaderboardData);
     }else if(score > leaderboardData['2ndScore']){
-      leaderboardData['3rdName'] = leaderboardData['2ndName'];
-      leaderboardData['3rdScore'] = leaderboardData['2ndScore'];
+      if(leaderboardData['2ndName']!=localStorage.getItem('name')){
+        leaderboardData['3rdName'] = leaderboardData['2ndName'];
+        leaderboardData['3rdScore'] = leaderboardData['2ndScore'];
+      }
       leaderboardData['2ndName'] = localStorage.getItem('name');
       leaderboardData['2ndScore'] = score;
       var ref4 = database.ref('leaderboard');
