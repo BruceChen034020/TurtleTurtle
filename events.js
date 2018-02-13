@@ -1,5 +1,5 @@
 /* Events
-版本: 1.0.0.7
+版本: 1.0.0.10
 */
 
 /* Click Events */
@@ -45,7 +45,7 @@ function gotData2(data){ // result (void)
   for(var i=0; i<keys.length; i++){
     var k = keys[i];
     var n = dt[k].name;
-    if(onlineList.includes(n)){
+    if(onlineList.includes(k)){
       resultList[i] = [];
       resultList[i][0] = n + ' 按了 ' + code2string[dt[k].key];
       resultList[i][1] = n;
@@ -53,6 +53,7 @@ function gotData2(data){ // result (void)
       console.log(resultList);
     }
   }
+  onlineData = dt;
 }
 
 function errData2(err){ // value (void)
@@ -130,7 +131,7 @@ function gotData5(data){ // value online (void)
       var li = createElement('li', n + ' is online');
       li.class('fuck');
       li.parent('onlineList');
-      onlineList.push(n);
+      onlineList.push(k);
 
     }
   }
