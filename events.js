@@ -1,5 +1,5 @@
 /* Events
-版本: N/A
+版本: 1.0.0.0
 */
 
 /* Click Events */
@@ -129,7 +129,7 @@ function gotData5(data){ // value online (void)
       var li = createElement('li', n + ' is online');
       li.class('fuck');
       li.parent('onlineList');
-      onlineList[i] = n;
+      onlineList.push(n);
 
     }
   }

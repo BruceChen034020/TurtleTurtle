@@ -6,7 +6,7 @@
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
 最後修改日期: 2018/2/13
-版本: N/A
+版本: 1.0.0.0
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -134,8 +134,11 @@ function draw(){
   frameRate(3);
   scoreL.innerHTML = 'Your score: ' + score + ' points';
   var now = new Date();
+  if(destination.getTime() < now.getTime()){
+    Reset1();
+  }
   if(destination.getTime() + 7000 < now.getTime()){
-    Reset();
+    Reset2();
   }
   if(involved){
     label1.innerHTML = ceil((destination.getTime() - now.getTime())/1000);
@@ -243,7 +246,7 @@ function sendOnline(){ // send a message to show you are online to the server
   ref.set(data);
 }
 
-function Reset(){
+function Reset2(){
     /* Send reset to server */
     var now = new Date();
     var des = new Date(now.getTime() + 7000);
@@ -252,7 +255,11 @@ function Reset(){
               sender: localStorage.getItem('name')};
     ref.set(data);
 
-    involved = false;
+
+}
+function Reset1(){
+  involved = false;
+    var now = new Date();
 
     /* Update result */
     var bankerCode = '';
@@ -351,9 +358,11 @@ function Reset(){
       leaderboardData['3rdScore'] = leaderboardData['2ndScore'];
       leaderboardData['2ndName'] = localStorage.getItem('name');
       leaderboardData['2ndScore'] = score;
-    }else if(score > leaderboardData['3rdScore']
-  ){
+    }else if(score > leaderboardData['3rdScore']){
       leaderboardData['3rdName'] = localStorage.getItem('name');
       leaderboardData['3rdScore'] = score;
     }
+
+    var d = destination.getTime();
+    destination.setTime(d + 14000)
 }
