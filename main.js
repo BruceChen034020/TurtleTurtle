@@ -5,7 +5,7 @@
 聯絡方式
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
-最後修改日期: N/A
+最後修改日期: 2018/2/13
 版本: N/A
 發表於: https://brucechen034020.github.io/
 程式碼尺度
@@ -81,7 +81,7 @@ function setup() {
 
   // initialize elements
   label1 = document.getElementById('label1');
-  label1.style.fontSize = '300px';
+  label1.style.fontSize = '200px';
 
   label2 = document.getElementById('label2');
 
