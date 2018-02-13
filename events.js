@@ -1,5 +1,5 @@
 /* Events
-版本: 1.0.0.0
+版本: 1.0.0.3
 */
 
 /* Click Events */
@@ -124,7 +124,7 @@ function gotData5(data){ // value online (void)
 
     var now = new Date();
 
-    if(t.getTime() > now.getTime() - 10000){
+    if(t.getTime() > now.getTime() - 20000){
 
       var li = createElement('li', n + ' is online');
       li.class('fuck');
