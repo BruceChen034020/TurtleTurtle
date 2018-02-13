@@ -6,7 +6,7 @@
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
 最後修改日期: 2018/2/13
-版本: 1.0.0.0
+版本: 1.0.0.1
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -87,7 +87,7 @@ function setup() {
 
   button1 = document.getElementById('button1');
   button1.addEventListener("click", button1_Clicked);
-  button1.style.fontSize = '72px';
+  button1.style.fontSize = '48px';
 
   button4 = document.getElementById('button2');
   button4.addEventListener("click", button4_Clicked);
@@ -96,7 +96,7 @@ function setup() {
   setTimeout(function(){ textBox5.value = localStorage.getItem('name'); }, 3000);
 
   result = document.getElementById('result');
-  result.style.fontSize = '24px';
+  result.style.fontSize = '20px';
 
   onlineCount = document.getElementById('onlineCount');
 
@@ -286,7 +286,7 @@ function Reset1(){
       li.parent('resultList');
 
     }
-    document.getElementById('resultList').style.fontSize = '24px';
+    document.getElementById('resultList').style.fontSize = '20px';
 
     var coin = false
     var n = resultList.length;
