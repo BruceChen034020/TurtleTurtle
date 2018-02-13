@@ -6,7 +6,7 @@
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
 最後修改日期: 2018/2/13
-版本: 1.0.0.10
+版本: 1.0.0.9
 發表於: https://brucechen034020.github.io/
 程式碼尺度
   N/A
@@ -25,20 +25,19 @@ var button4; // (Button)
 var textBox5; // (Input)
 var destination; // time destination to 公布大家按的 (Date)
 var involved; // You are involved in the game (bool)
-var onlineList = []; // online list (string array) online ip
+var onlineList = []; // online list (string array)
 var onlineListOl; // online list (ol)
 var resultList = []; // result list (2D string array)  resultList[i][0] = string to present; resultList[i][1] = name ; resultList[i][2] = keyCode;
 var isSent; // key pressed is sent to the server (bool)
 var result; // result p (p)
 var onlineCount; // (p)
-var banker; // 莊家 ip (string)
+var banker; // 莊家 (string)
 var isBanker; // I am  banker (bool)
 var lastBankerData = {}; // (dictionary)
 var bankerChosen = false; // I know who is 莊家 (bool)
 var score; // (int)
 var scoreL; // (Label)
 var leaderboardData = {}; // (dict<string, string>)
-var onlineData = {}; // (Dictionary)
 
 /* p5 functions */
 function setup() {
@@ -211,7 +210,7 @@ console.log(onlineList);
 
     var t = new Date(lastBankerData[k].lastBankerTime);
 
-    if(onlineList.includes(k)){
+    if(onlineList.includes(n)){
 
       if(t.getTime() < min){
 
@@ -321,15 +320,15 @@ function Reset1(){
     }
     for(var i=0; i<n; i++){
       for(var j=0; j<onlineList.length; j++){
-        if(resultList[i][1]==onlineData[onlineList[j]].name){
+        if(resultList[i][1]==onlineList[j]){
           pressed[j] = true;
         }
       }
     }
     for(var i=0; i<onlineList.length; i++){
       if(pressed[i]==false){
-        var li = createElement('li', onlineData[onlineList[i]] + ' 沒按任何按鍵，被罰扣1分。');
-        if(onlineList[i]==ip){
+        var li = createElement('li', onlineList[i] + ' 沒按任何按鍵，被罰扣1分。');
+        if(onlineList[i]==localStorage.getItem('name')){
           score -= 1;
         }
         li.class('result');
