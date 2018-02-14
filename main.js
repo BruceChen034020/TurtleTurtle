@@ -5,7 +5,7 @@
 聯絡方式
     Facebook連結: https://www.facebook.com/bruce.chen.372
     LINE ID: brucechen0
-最後修改日期: 2018/2/13
+最後修改日期: 2018/2/14
 版本: 1.0.0.9
 發表於: https://brucechen034020.github.io/
 程式碼尺度
@@ -53,7 +53,7 @@ function setup() {
     console.log(JSON.stringify(data, null, 2));
     var userName = data['ip']
     userName += ' (' + (data['country_name']) + ')';
-    if(localStorage.getItem("name") == null)
+    if(localStorage.getItem("name") == null || localStorage.getItem("name") == undefined)
       localStorage.setItem("name", userName);
     ip = userName.replace('.', '-');
     ip = ip.replace('.', '-');
